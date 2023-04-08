@@ -1,0 +1,33 @@
+﻿@model Contact
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h4>Create Contact</h4>
+    </div>
+    <div class="panel-body">
+        <form method="post" action="@Url.Action("Update","Mantenedor")">
+            <input type="hidden" name="IdContact" value="@Html.DisplayTextFor(m => m.IdContact)" />
+            <div class="form-group">
+                <label>NAME</label>
+                <input class="form-control" type="text" name="Name" value="@Html.DisplayTextFor(m => m.Name)"/>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input class="form-control" type="text" name="Email" value="@Html.DisplayTextFor(m => m.Email) "/>
+            </div>
+            <div class="form-group">
+                <label>PHONE</label>
+                <input class="form-control" type="text" name="Phone" value="@Html.DisplayTextFor(m => m.Phone)"/>
+            </div>
+      <hr />
+
+      <button type="submit" class="btn btn-primary">Register</button>
+      <a class="btn btn-danger " href="@Url.Action("Index")">Back</a>
+        </form>
+    </div>
+</div>
